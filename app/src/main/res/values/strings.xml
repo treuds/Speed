@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Speed</string>
+    <string name="title_activity_informations_trajet">Informations Trajet</string>
+    <string name="title_activity_informations_arret">Informations sur l\'arret</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_connexion">Connexion</string>
+    <string name="deconnexion">Deconnexion</string>
+    <string name="arret">Nouvel Arret</string>
+    <string name="ligne">Ligne observee</string>
+    <string name="capacite">Capacite du vehicule</string>
+    <string name="typevehi">Type du vehicule</string>
+    <string name="prix">Prix de la course en HTG</string>
+
+    <string name="chauffeur">Nom du chauffeur</string>
+    <string name="trajet">Nouveau Trajet</string>
+    <string name="ftrajet">Fin du trajet</string>
+</resources>

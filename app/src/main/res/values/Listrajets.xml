@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="trajet_array">
+        <item>1aassff</item>
+        <item>2aassff</item>
+        <item>3aassff</item>
+        <item>4aassff</item>
+        <item>5aassff</item>
+    </string-array>
+</resources>
