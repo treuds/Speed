@@ -140,8 +140,15 @@ public class MainActivity extends AppCompatActivity  {
                 Date today=d.getTime();
                 java.text.SimpleDateFormat Formatter= new java.text.SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss Z");
                 String ins=Formatter.format(today);
-                int capa=Integer.parseInt(capacite_vehi.getText().toString());
-                double prix=Double.parseDouble(prix_course.getText().toString());
+                int capa;
+                double prix;
+                try {
+                    capa=Integer.parseInt(capacite_vehi.getText().toString());
+                    prix=Double.parseDouble(prix_course.getText().toString());
+                }catch (NumberFormatException e){
+                    capa=0;
+                    prix=0;
+                }
                 String Identification_chauf=nom_chauffeur.getText().toString();
 
                 String selec=mlignes.getSelectedItem().toString();
@@ -149,10 +156,10 @@ public class MainActivity extends AppCompatActivity  {
                 Trajet t=new Trajet(getmAuth().getCurrentUser().getUid(),selec,type_v, capa,prix,Identification_chauf,ins,new double[]{LatitudeActuelle,LongitudeActuelle});
                 Toast.makeText(MainActivity.this,t.toString(),
                         Toast.LENGTH_SHORT).show();
-                String idTrajet=databaseTrajet.push().getKey();
-                databaseTrajet.child(idTrajet).setValue(t);
+                String Identification_trajet=databaseTrajet.push().getKey();
+                databaseTrajet.child(Identification_trajet).setValue(t);
                 Intent infTrajet = new Intent(MainActivity.this, InformationsTrajet.class);
-                infTrajet.putExtra(IDTRAJET,idTrajet);
+                infTrajet.putExtra(IDTRAJET,Identification_trajet);
                 startActivity(infTrajet);
 
             }

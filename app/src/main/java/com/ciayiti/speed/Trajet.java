@@ -1,6 +1,8 @@
 package com.ciayiti.speed;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by bienvenue on 5/18/2017.
@@ -8,22 +10,22 @@ import java.util.Date;
 
 public class Trajet {
 
-    private String Identification_trajet;
-    private String Identification_chauf;
-    private String Identification_enq;
-    private String Ligne_trajet;
-    private double Prix_fixe; //prix fixe en gourde
-    private String Sens_trajet;
-    private long  Temps_charg; //Temps de chargement en milisecondes
-    private int Capacite_vehi;
-    private String Type_vehi;
-    private String Heure_dep;
-    private double Coord_dep[];
-    private int Nbre_persD;
-    private String Heure_arv;
-    private double Coord_arv[];
-    private int Nbre_persArv;
-    private String commentaires;
+     String Identification_trajet;
+    String Identification_chauf;
+    String Identification_enq;
+    String Ligne_trajet;
+    double Prix_fixe; //prix fixe en gourde
+    String Sens_trajet;
+    long  Temps_charg; //Temps de chargement en milisecondes
+    int Capacite_vehi;
+    String Type_vehi;
+    String Heure_dep;
+     List Coord_dep;
+     int Nbre_persD;
+     String Heure_arv;
+     List Coord_arv;
+     int Nbre_persArv;
+    String commentaires;
 
 
     public Trajet() {
@@ -39,7 +41,7 @@ public class Trajet {
         Identification_enq = identification_enq;
         Ligne_trajet = ligne_trajet;
         Heure_dep = heure_dep;
-        Coord_dep = coord_dep;
+        Coord_dep = Arrays.asList(coord_dep);
     }
 
     public Trajet( String identification_enq, String ligne_trajet,String type_vehi, int capacite_vehi,double prix, String identification_chauf, String heure_dep, double[] coord_dep) {
@@ -50,6 +52,6 @@ public class Trajet {
         Prix_fixe=prix;
         Type_vehi = type_vehi;
         Heure_dep = heure_dep;
-        Coord_dep = coord_dep;
+        Coord_dep = Arrays.asList(coord_dep);
     }
 }

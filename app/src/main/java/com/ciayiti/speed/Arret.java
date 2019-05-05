@@ -1,6 +1,8 @@
 package com.ciayiti.speed;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by bienvenue on 5/21/2017.
@@ -10,7 +12,7 @@ public class Arret {
      public String Identification_arret;
      public String Identification_trajet;
      public String   Heure_debut;
-     public double Coord_arr[];
+     public List Coord_arr;
      public int Pers_Des;
      public int Pers_Mon;
      public String Heure_fin;
@@ -21,7 +23,7 @@ public class Arret {
     public Arret(String identification_trajet, String heure_debut, double coord_arr[], int pers_Des, int pers_Mon, String heure_fin) {
         Identification_trajet = identification_trajet;
         Heure_debut = heure_debut;
-        Coord_arr = coord_arr;
+        Coord_arr = Arrays.asList(coord_arr);
         Pers_Des = pers_Des;
         Pers_Mon = pers_Mon;
         Heure_fin = heure_fin;
@@ -37,7 +39,7 @@ public class Arret {
     }
 
     public void setCoord_arr(double[] coord_arr) {
-        Coord_arr = coord_arr;
+        Coord_arr = Arrays.asList(coord_arr);
     }
 
     public void setPers_Des(int pers_Des) {
