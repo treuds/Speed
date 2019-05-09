@@ -29,27 +29,27 @@ public class Arret {
         Heure_fin = heure_fin;
     }
 
-    public void setIdentification_trajet(String identification_trajet) {
+    public void setIdentificationtrajet(String identification_trajet) {
         Identification_trajet = identification_trajet;
     }
 
-    public void setHeure_debut(String heure_debut) {
+    public void setHeuredebut(String heure_debut) {
 
         Heure_debut = heure_debut;
     }
 
-    public void setCoord_arr(double[] coord_arr) {
+    public void setCoordarr(List<Double> coord_arr) {
         Coord_arr = Arrays.asList(coord_arr);
     }
 
-    public void setPers_Des(int pers_Des) {
+    public void setPersdes(int pers_Des) {
         Pers_Des = pers_Des;
     }
 
-    public void setPers_Mon(int pers_Mon) {
+    public void setPersmon(int pers_Mon) {
         Pers_Mon = pers_Mon;
     }
-    public void setHeure_fin(String heure_fin) {
+    public void setHeurefin(String heure_fin) {
         Heure_fin = heure_fin;
     }
 

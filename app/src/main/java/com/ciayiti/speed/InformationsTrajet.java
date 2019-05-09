@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -78,9 +79,9 @@ public class InformationsTrajet extends Activity {
                 Date maintenant=calendrier.getTime();
                 java.text.SimpleDateFormat Formatter= new java.text.SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss Z");
                 String Heure_debut=Formatter.format(maintenant);
-                a.setIdentification_trajet(identificationTrajet);
-                a.setCoord_arr(new double[]{LatitudeActuelle, LongitudeActuelle});
-                a.setHeure_debut(Heure_debut);
+                a.setIdentificationtrajet(identificationTrajet);
+                a.setCoordarr(Arrays.asList(new Double[]{LatitudeActuelle,LongitudeActuelle}));
+                a.setHeuredebut(Heure_debut);
                 final AlertDialog.Builder mbuil= new AlertDialog.Builder(InformationsTrajet.this);
                 View mview=getLayoutInflater().inflate(R.layout.activity_informations_arret,null);
                 final EditText nbrePM=(EditText) mview.findViewById(R.id.persM);
@@ -97,9 +98,9 @@ public class InformationsTrajet extends Activity {
                             String Heure_fin=Formatter.format(maintenant);
                             int M=Integer.parseInt( nbrePM.getText().toString());
                             int D=Integer.parseInt(nbrePD.getText().toString());
-                            a.setPers_Des(D);
-                            a.setPers_Mon(M);
-                            a.setHeure_fin(Heure_fin);
+                            a.setPersdes(D);
+                            a.setPersmon(M);
+                            a.setHeurefin(Heure_fin);
                             String cle=arretRef.push().getKey();
                             arretRef.child(cle).setValue(a);
                             Toast.makeText(InformationsTrajet.this, "Arret enregistre.",

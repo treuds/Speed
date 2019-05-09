@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -63,9 +64,9 @@ public class MainActivity extends AppCompatActivity  {
 
         mlignes = (Spinner) findViewById(R.id.spinner);
         List<String> lignes = new ArrayList<String>();
-        lignes.add("Petion-ville,Bourdon,Centre-ville");
-        lignes.add("Petion-ville,Canape-vert,Centre-ville");
-        lignes.add("Freres-PV");
+        lignes.add("Gerald-Delmas 33");
+        lignes.add("Carrefour aeroport-Petion-Ville");
+        lignes.add("Delmas 75-Puit blain");
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, lignes);
         mlignes.setAdapter(adapter);
         type_vehicule= (Spinner) findViewById(R.id.Type_vehi);
@@ -153,7 +154,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 String selec=mlignes.getSelectedItem().toString();
                 String type_v=type_vehicule.getSelectedItem().toString();
-                Trajet t=new Trajet(getmAuth().getCurrentUser().getUid(),selec,type_v, capa,prix,Identification_chauf,ins,new double[]{LatitudeActuelle,LongitudeActuelle});
+                Trajet t=new Trajet(getmAuth().getCurrentUser().getUid(),selec,type_v, capa,prix,Identification_chauf,ins, Arrays.asList(new Double[]{LatitudeActuelle,LongitudeActuelle}));
                 Toast.makeText(MainActivity.this,t.toString(),
                         Toast.LENGTH_SHORT).show();
                 String Identification_trajet=databaseTrajet.push().getKey();

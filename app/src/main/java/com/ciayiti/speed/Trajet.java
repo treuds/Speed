@@ -44,7 +44,7 @@ public class Trajet {
         Coord_dep = Arrays.asList(coord_dep);
     }
 
-    public Trajet( String identification_enq, String ligne_trajet,String type_vehi, int capacite_vehi,double prix, String identification_chauf, String heure_dep, double[] coord_dep) {
+    public Trajet( String identification_enq, String ligne_trajet,String type_vehi, int capacite_vehi,double prix, String identification_chauf, String heure_dep, List<Double>coord_dep) {
         Identification_chauf = identification_chauf;
         Identification_enq = identification_enq;
         Ligne_trajet = ligne_trajet;
@@ -52,6 +52,6 @@ public class Trajet {
         Prix_fixe=prix;
         Type_vehi = type_vehi;
         Heure_dep = heure_dep;
-        Coord_dep = Arrays.asList(coord_dep);
+        Coord_dep = coord_dep;
     }
 }
